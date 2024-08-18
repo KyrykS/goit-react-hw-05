@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { lazy, Suspense } from 'react';
 import Navigation from './Navigation/Navigation';
 
-const HomePage = lazy(() => import('../pages/HomePage.jsx'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
