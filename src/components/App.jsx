@@ -1,26 +1,26 @@
-import React from 'react';
-import Profile from './Profile/Profile';
-import FriendList from './FriendList/FriendList';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
-import userData from '../userData.json';
-import friends from '../friends.json';
-import transactions from '../transactions.json'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
+import Navigation from './Navigation/Navigation';
 
-const App = () => {
-  return (
-    <div>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory transactions={transactions} />
-    </div>
-  );
-};
+const HomePage = lazy(() => import('../pages/HomePage.jsx'));
+const MoviesPage = lazy(() => import('../pages/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+
+function App() {
+    return (
+        <Router>
+            <Navigation />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/movies" element={<MoviesPage />} />
+                    <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+            </Suspense>
+        </Router>
+    );
+}
 
 export default App;
-
