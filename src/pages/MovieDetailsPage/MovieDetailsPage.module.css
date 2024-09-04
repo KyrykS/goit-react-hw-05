@@ -1,0 +1,17 @@
+.container {
+    padding: 20px;
+  }
+  
+  .goBack {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #61dafb;
+    font-weight: bold;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
