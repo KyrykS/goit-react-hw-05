@@ -1,14 +1,17 @@
 .nav {
-    background-color: #007bff;
-    padding: 1rem;
+  padding: 20px;
+  background-color: #282c34;
+  display: flex;
+  gap: 20px;
 }
 
 .link {
-    color: white;
-    margin-right: 1rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: #61dafb;
+  font-size: 1.2rem;
 }
 
-.link.active {
-    text-decoration: underline;
+.activeLink {
+  color: #21a0f0;
+  font-weight: bold;
 }
